@@ -3,7 +3,7 @@
     min-height: 60vh;
     border-radius: 20px;
     padding: 0 5% 0 5%;
-    background-color: #e1c693;
+    background-color: #b3965d;
     color: white;
 }
 
@@ -13,6 +13,7 @@
 }
 
 .card p {
-    margin-top: 10%;
+    margin-top: 20%;
     font-size: 25px;
+    text-align: left;
 }

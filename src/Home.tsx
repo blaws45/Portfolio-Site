@@ -90,19 +90,19 @@ function Home() {
                     end: "+=2000",
                     pin: true,
                     scrub: true,
-                    invalidateOnRefresh: false,
-                    markers: true
+                    invalidateOnRefresh: false
                 }
             });
 
             const skillsCards = gsap.utils.toArray<HTMLElement>(".skillsCard");
             const colours: string[] = [
-                "#e1c693",
-                "#ddcda0",
-                "#E1D7BCFF"
+                "#dcb872",
+                "#bca374",
+                "#dfc492",
+                "#ead3a8"
             ]
             skillsCards.forEach((card, index) => {
-                if (index >= 0) {
+                if (index > 0) {
                     tl.to(card, {
                         y: index * -725,
                         backgroundColor: colours[index]
@@ -153,13 +153,12 @@ function Home() {
                 <div className="heroTitleContainer">
                     <h1 className={"hi"}>Hi, I'm</h1>
                     <h1 className={"nameTitle"}>Bryn Law-Smith</h1>
-                    <h2>Software Developer</h2>
+                    <h2>Graduate Software Developer</h2>
                     <p>
-                        QUT graduate with a Bachelor of Information Technology majoring in Computer Science.
-                        Full-stack developer experienced in building responsive web applications using WordPress,
-                        HTML, CSS, JavaScript, Python, and database technologies. Strong attention to detail with a
-                        focus on creating clean, user-friendly systems that balance functionality with intuitive design
-                        for stakeholders and end users.
+                        A 2025 QUT graduate with a Bachelor of Information Technology (Computer Science).
+                        I'm a friendly, easy to get along with team member who always strives for the
+                        highest-quality. I look at systems with a strong attention to detail mixing functionality
+                        with intuitive design to make them as clean, user-friendly and professional as possible.
                     </p>
                 </div>
 
@@ -171,19 +170,31 @@ function Home() {
             <div className="skillsSection">
                 <h2>I specialise in...</h2>
                 <div className="skillsContainer">
-                    <SkillsCard className={"skillsCard"} />
-                    <SkillsCard className={"skillsCard"} />
-                    <SkillsCard className={"skillsCard"} />
+                    <SkillsCard className={"skillsCard"} skill={"Web Design"} description={
+                        "Designing modern, user-focused interfaces using tools such as Figma and sketching techniques." +
+                        " I turn ideas into clear low and high-fidelity designs with a focus on usability," +
+                        " responsiveness, and clean modern design."}/>
+                    <SkillsCard className={"skillsCard"} skill={"Web Development"} description={
+                        "Building responsive and accessible websites using HTML, CSS, and JavaScript." +
+                        " I translate design concepts into functional, polished interfaces and use tools like GSAP" +
+                        " to create engaging animations that enhance user experience and interaction."}/>
+                    <SkillsCard className={"skillsCard"} skill={"Back-End Development"} description={"" +
+                        "Developing and integrating scalable back-end systems using JavaScript," +
+                        " Node.js, SQL, and REST APIs."}/>
                 </div>
             </div>
             <br />
             <div className="projectsSection">
-                <h2>Projects</h2>
+                <h2>Some of my work</h2>
                 <div className="projectsContainer">
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
+                    <ProjectCard projectName={"Sports Streaming Site"}
+                                 description={"Frontend showcase styled as streaming service"}
+                                 link={"https://blaws45.github.io/sportStreamingSite/"}
+                                 img={"sports"}/>
+                    <ProjectCard projectName={"Where is ya bean"}
+                                 description={"WordPress site made for a local cafe"}
+                                 link={"https://blaws45.github.io/cafe-site/"}
+                                 img={"cafe"}/>
                 </div>
             </div>
         </div>

@@ -3,16 +3,15 @@ import styles from "./styles/SkillsCard.module.css";
 
 interface SkillsCardProps {
     className?: string;
+    skill: string;
+    description: string;
 }
 
-function SkillsCard( { className }: SkillsCardProps) {
+function SkillsCard( { className, skill, description }: SkillsCardProps) {
     return (
       <div className={`${styles.card} ${className ?? ""}`}>
-          <h3>Skill Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maiores nulla perspiciatis ullam
-              voluptatibus! Consequatur dignissimos ipsum magnam minima nam nulla provident quisquam quo, sapiente
-              voluptatem. At deleniti laudantium optio.
-          </p>
+          <h3>{skill}</h3>
+          <p>{description}</p>
       </div>
     );
 }

@@ -20,7 +20,7 @@
     }
 
     .overlay {
-        opacity: 75%;
+        opacity: 85%;
     }
 
     .title {
@@ -77,6 +77,14 @@
     background-color: #171717;
     border: none;
     color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visitButton:hover {
+    background-color: #232323;
 }
 
 .overlay {
