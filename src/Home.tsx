@@ -96,12 +96,16 @@ function Home() {
             });
 
             const skillsCards = gsap.utils.toArray<HTMLElement>(".skillsCard");
-
+            const colours: string[] = [
+                "#1876EAFF",
+                "#3E8BEDFF",
+                "#66A2EDFF"
+            ]
             skillsCards.forEach((card, index) => {
                 if (index >= 0) {
                     tl.to(card, {
-                        y: index * -725 ,
-                        filter: `saturate(${1 - (index * 0.3)})`
+                        y: index * -725,
+                        backgroundColor: colours[index]
                     })
                 }
             })
