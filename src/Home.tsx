@@ -4,19 +4,48 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/Home.css";
 import testImg from "./images/testImg.png";
 import SkillsCard from "./SkillsCard";
+import ProjectCard from "./ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
     const root = useRef(null);
 
+    // ----Wait for images to load before refresh-----
+    useEffect(() => {
+        const images = document.images;
+        let loaded = 0;
+
+        const onLoad = () => {
+            loaded++;
+            if (loaded >= images.length) {
+                requestAnimationFrame(() => {
+                    ScrollTrigger.refresh();
+                });
+            }
+        };
+
+        Array.from(images).forEach((img) => {
+            if (img.complete) {
+                loaded++;
+            } else {
+                img.addEventListener("load", onLoad);
+            }
+        });
+
+        if (loaded >= images.length) {
+            requestAnimationFrame(() => ScrollTrigger.refresh());
+        }
+    }, []);
+
+    //--------------------- Hero Animation ----------------------
     useEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".heroContainer",
                     start: "top top",
-                    end: "bottom top",
+                    end: "+=1000",
                     scrub: true,
                     pin: true,
                     invalidateOnRefresh: true
@@ -50,32 +79,10 @@ function Home() {
 
         }, root);
 
-        // ----Wait for images to load before refresh-----
-        const images = document.images;
-        let loaded = 0;
-
-        const onLoad = () => {
-            loaded++;
-            if (loaded >= images.length) {
-                ScrollTrigger.refresh();
-            }
-        };
-
-        Array.from(images).forEach((img) => {
-            if (img.complete) {
-                loaded++;
-            } else {
-                img.addEventListener("load", onLoad);
-            }
-        });
-
-        requestAnimationFrame(() => {
-            ScrollTrigger.refresh();
-        });
-
         return () => ctx.revert();
     }, []);
 
+    //-----------------Card reveal animation--------------------
     useEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({
@@ -92,13 +99,46 @@ function Home() {
             const skillsCards = gsap.utils.toArray<HTMLElement>(".skillsCard");
 
             skillsCards.forEach((card, index) => {
-                if (index > 0) {
+                if (index >= 0) {
                     tl.to(card, {
-                        y: index * -775 ,
+                        y: index * -725 ,
                         filter: `saturate(${1 - (index * 0.3)})`
                     })
                 }
             })
+
+        }, root);
+
+        return () => ctx.revert();
+    }, []);
+
+    //---------------- Projects text animation -----------------
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+           const tl = gsap.timeline({
+               scrollTrigger: {
+                   trigger: ".projectsSection",
+                   start: "top center",
+                   end: "top top",
+                   scrub: true,
+                   pin: true,
+                   markers: true,
+                   invalidateOnRefresh: true
+               }
+           });
+
+           tl.to(".projectsSection h2", {
+               fontSize: 100
+           }, "<50%");
+
+            tl.to(".projectsContainer > *", {
+                y: -100,
+                opacity: 1,
+            }, 0);
+
+            tl.to(".projectsContainer", {
+                y: -100,
+            }, 0);
 
         }, root);
 
@@ -135,8 +175,14 @@ function Home() {
                 </div>
             </div>
             <br />
-            <div className="Gap">
-                <p>gap</p>
+            <div className="projectsSection">
+                <h2>Projects</h2>
+                <div className="projectsContainer">
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
+                </div>
             </div>
         </div>
     );
