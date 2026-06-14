@@ -2,13 +2,11 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: red;
 }
 
 .heroTitleContainer {
-    flex: 2;
+    flex: 1;
     padding: 5%;
-    background-color: blue;
 }
 
 .heroTitleContainer h1 {
@@ -22,21 +20,28 @@
     font-size: 50px;
 }
 
-.heroTitleContainer p {
-    margin-top: 10%;
-    font-size: 1px;
-    opacity: 0;
+.heroTitleContainer h1 {
+    text-align: left;
 }
 
-
+.heroTitleContainer p {
+    margin-top: 10%;
+    font-size: 20px;
+    opacity: 0;
+    color: black;
+}
 .heroImgContainer {
     flex: 1;
-    background-color: green;
     width: 50%;
 }
 .heroImage {
     width: 100%;
     float: right;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 25%),
+                        linear-gradient(to top, transparent, black 25%);
+    mask-image: linear-gradient(to right, transparent, black 25%),
+                linear-gradient(to top, transparent, black 25%);
+    -webkit-mask-composite: source-in;
 }
 
 .skillsSection {

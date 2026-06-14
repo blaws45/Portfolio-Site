@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/Home.css";
-import testImg from "./images/testImg.png";
+import heroImg from "./images/enhanced_portrait.png";
 import SkillsCard from "./SkillsCard";
 import ProjectCard from "./ProjectCard";
 
@@ -45,7 +45,7 @@ function Home() {
                 scrollTrigger: {
                     trigger: ".heroContainer",
                     start: "top top",
-                    end: "+=1000",
+                    end: "+=500",
                     scrub: true,
                     pin: true,
                     invalidateOnRefresh: true
@@ -56,12 +56,11 @@ function Home() {
             tl.to(".heroTitleContainer h2", {
                 scale: 0.5,
                 y: -55,
-                x: -220,
+                x: -165,
                 ease: "none"
             });
 
             tl.to(".heroTitleContainer p", {
-                fontSize: 24,
                 duration: 0,
                 ease: "none"
             }, 0);
@@ -150,7 +149,6 @@ function Home() {
                 <div className="heroTitleContainer">
                     <h1>Bryn Law-Smith</h1>
                     <h2>Software Developer</h2>
-
                     <p>
                         QUT graduate with a Bachelor of Information Technology majoring in Computer Science.
                         Full-stack developer experienced in building responsive web applications using WordPress,
@@ -161,7 +159,7 @@ function Home() {
                 </div>
 
                 <div className="heroImgContainer">
-                    <img className="heroImage" src={testImg} alt="Character Portrait" />
+                    <img className="heroImage" src={heroImg} alt="Character Portrait" />
                 </div>
             </div>
 
