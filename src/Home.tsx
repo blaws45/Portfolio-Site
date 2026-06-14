@@ -73,7 +73,6 @@ function Home() {
             }, "<50%");
 
             tl.to(".heroTitleContainer h1", {
-                paddingBottom: 5,
                 ease: "none"
             }, 0);
 
@@ -87,12 +86,13 @@ function Home() {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: ".skillsContainer",
+                    trigger: ".skillsSection",
                     start: "center center",
                     end: "+=2000",
                     pin: true,
                     scrub: true,
-                    invalidateOnRefresh: true
+                    invalidateOnRefresh: false,
+                    markers: true
                 }
             });
 
@@ -121,23 +121,22 @@ function Home() {
                    start: "top center",
                    end: "top top",
                    scrub: true,
-                   pin: true,
-                   markers: true,
                    invalidateOnRefresh: true
                }
            });
 
            tl.to(".projectsSection h2", {
+               y: 0,
                fontSize: 100
            }, "<50%");
 
             tl.to(".projectsContainer > *", {
-                y: -100,
+                y: 0,
                 opacity: 1,
             }, 0);
 
             tl.to(".projectsContainer", {
-                y: -100,
+                y: 0
             }, 0);
 
         }, root);
@@ -167,7 +166,7 @@ function Home() {
             </div>
 
             <div className="skillsSection">
-                <h2>Skills</h2>
+                <h2>What I do</h2>
                 <div className="skillsContainer">
                     <SkillsCard className={"skillsCard"} />
                     <SkillsCard className={"skillsCard"} />

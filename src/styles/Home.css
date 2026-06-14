@@ -39,21 +39,27 @@
     float: right;
 }
 
-.aboutSection {
-    min-height: 100vh;
+.skillsSection {
+    text-align: center;
+    background-color: purple;
+    padding-top: 10%;
+}
+
+.skillsSection h2 {
+    margin: 0;
 }
 
 .skillsSection {
-    text-align: center;
+    font-size: 40px;
 }
 
 .skillsContainer {
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25vh;
     height: 100vh;
-    padding-top: 20vh;
 }
 .projectsSection {
     padding: 0;
@@ -62,7 +68,7 @@
     font-size: 400px;
     margin: 0;
     padding: 0;
-    transform: translateY(-250px);
+    transform: translateY(-280px);
 }
 
 .projectsContainer {
@@ -70,15 +76,10 @@
     flex-wrap: wrap;
     gap: 10%;
     justify-content: center;
-    clip-path: inset(-150px 0 0 0);
+    clip-path: inset(-25px 0 0 0);
 }
 
 .projectsContainer > * {
-    transform: translateY(-200vh);
-
     opacity: 0;
-}
-
-.Gap {
-    height: 50vh;
+    transform: translateY(-200vh);
 }
