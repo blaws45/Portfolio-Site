@@ -86,7 +86,7 @@ function Home() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".skillsSection",
-                    start: "center center",
+                    start: "center 55%",
                     end: "+=2000",
                     pin: true,
                     scrub: true,
@@ -97,9 +97,9 @@ function Home() {
 
             const skillsCards = gsap.utils.toArray<HTMLElement>(".skillsCard");
             const colours: string[] = [
-                "#1876EAFF",
-                "#3E8BEDFF",
-                "#66A2EDFF"
+                "#e1c693",
+                "#ddcda0",
+                "#E1D7BCFF"
             ]
             skillsCards.forEach((card, index) => {
                 if (index >= 0) {
@@ -151,7 +151,8 @@ function Home() {
         <div ref={root}>
             <div className="heroContainer">
                 <div className="heroTitleContainer">
-                    <h1>Bryn Law-Smith</h1>
+                    <h1 className={"hi"}>Hi, I'm</h1>
+                    <h1 className={"nameTitle"}>Bryn Law-Smith</h1>
                     <h2>Software Developer</h2>
                     <p>
                         QUT graduate with a Bachelor of Information Technology majoring in Computer Science.
@@ -168,7 +169,7 @@ function Home() {
             </div>
 
             <div className="skillsSection">
-                <h2>What I do</h2>
+                <h2>I specialise in...</h2>
                 <div className="skillsContainer">
                     <SkillsCard className={"skillsCard"} />
                     <SkillsCard className={"skillsCard"} />

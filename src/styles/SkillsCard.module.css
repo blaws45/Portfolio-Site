@@ -2,16 +2,17 @@
     width: 66%;
     min-height: 60vh;
     border-radius: 20px;
-    padding: 20px;
-    background-color: #1876ea;
+    padding: 0 5% 0 5%;
+    background-color: #e1c693;
+    color: white;
 }
 
 .card h3 {
-    font-size: 35px;
+    font-size: 60px;
     text-align: left;
 }
 
 .card p {
-    margin-top: 15%;
+    margin-top: 10%;
     font-size: 25px;
 }
