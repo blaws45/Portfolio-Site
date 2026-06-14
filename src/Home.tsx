@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/Home.css";
 import testImg from "./images/testImg.png";
+import SkillsCard from "./SkillsCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,6 @@ function Home() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".heroContainer",
@@ -19,7 +19,6 @@ function Home() {
                     end: "bottom top",
                     scrub: true,
                     pin: true,
-                    markers: true,
                     invalidateOnRefresh: true
                 }
             });
@@ -27,8 +26,8 @@ function Home() {
             // Use transforms instead of fontSize (prevents layout shift bugs)
             tl.to(".heroTitleContainer h2", {
                 scale: 0.5,
-                y: -90,
-                x: -170,
+                y: -55,
+                x: -220,
                 ease: "none"
             });
 
@@ -77,6 +76,35 @@ function Home() {
         return () => ctx.revert();
     }, []);
 
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".skillsContainer",
+                    start: "center center",
+                    end: "+=2000",
+                    pin: true,
+                    scrub: true,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            const skillsCards = gsap.utils.toArray<HTMLElement>(".skillsCard");
+
+            skillsCards.forEach((card, index) => {
+                if (index > 0) {
+                    tl.to(card, {
+                        y: index * -775 ,
+                        filter: `saturate(${1 - (index * 0.3)})`
+                    })
+                }
+            })
+
+        }, root);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <div ref={root}>
             <div className="heroContainer">
@@ -98,9 +126,18 @@ function Home() {
                 </div>
             </div>
 
-            <section className="aboutSection">
-                About Me
-            </section>
+            <div className="skillsSection">
+                <h2>Skills</h2>
+                <div className="skillsContainer">
+                    <SkillsCard className={"skillsCard"} />
+                    <SkillsCard className={"skillsCard"} />
+                    <SkillsCard className={"skillsCard"} />
+                </div>
+            </div>
+            <br />
+            <div className="Gap">
+                <p>gap</p>
+            </div>
         </div>
     );
 }

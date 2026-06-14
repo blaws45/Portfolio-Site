@@ -6,9 +6,7 @@
 }
 
 .heroTitleContainer {
-    display: flex;
-    flex-direction:column;
-    width: 50%;
+    flex: 2;
     padding: 5%;
     background-color: blue;
 }
@@ -24,20 +22,40 @@
 }
 
 .heroTitleContainer p {
+    margin-top: 10%;
     font-size: 1px;
     opacity: 0;
 }
 
 
 .heroImgContainer {
+    flex: 1;
     background-color: green;
     width: 50%;
 }
 .heroImage {
-    height: 80vh;
+    width: 100%;
     float: right;
 }
 
 .aboutSection {
     min-height: 100vh;
+}
+
+.skillsSection {
+    text-align: center;
+}
+
+.skillsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25vh;
+    height: 100vh;
+    background-color: blueviolet;
+    padding-top: 20vh;
+}
+
+.Gap {
+    height: 50vh;
 }
