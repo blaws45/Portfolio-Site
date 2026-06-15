@@ -45,7 +45,7 @@ function Home() {
                 scrollTrigger: {
                     trigger: ".heroContainer",
                     start: "top top",
-                    end: "+=500",
+                    end: "+=100",
                     scrub: true,
                     pin: true,
                     invalidateOnRefresh: true
