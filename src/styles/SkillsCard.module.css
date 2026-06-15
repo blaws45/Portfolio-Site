@@ -3,17 +3,17 @@
     min-height: 60vh;
     border-radius: 20px;
     padding: 0 5% 0 5%;
-    background-color: #b3965d;
+    background-color: #bca374;
     color: white;
 }
 
 .card h3 {
-    font-size: 60px;
+    font-size: clamp(1rem, 6vw, 4rem);
     text-align: left;
 }
 
 .card p {
-    margin-top: 20%;
-    font-size: 25px;
+    margin-top: 10%;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     text-align: left;
 }

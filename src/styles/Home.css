@@ -2,31 +2,33 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-image: linear-gradient(to right, white, #fdf8e0 75%);
+    background-image: linear-gradient(to right, white, #fdf8e0 50%);
 }
 
 .heroTitleContainer {
     flex: 1;
     padding: 5%;
+    overflow: hidden;
 }
 
 .nameTitle {
-    font-size: 70px;
+    font-size: clamp(1.5rem, 5vw, 5rem);
+    text-wrap: nowrap;
     padding-bottom: 1%;
     border-bottom: 2px solid black;
-    margin: 0;
-    margin-bottom: 10%;
+    margin: 0 0 10%;
 }
 
 .hi {
-    font-size: 30px;
+    font-size: clamp(1rem, 2vw, 2rem);
     opacity: 50%;
     margin: 0;
 }
 
 .heroTitleContainer h2 {
     text-align: left;
-    font-size: 50px;
+    font-size: clamp(1rem, 3vw, 3rem);
+    text-wrap: nowrap;
     color: #195a1f;
 }
 
@@ -36,22 +38,21 @@
 
 .heroTitleContainer p {
     margin-top: 10%;
-    font-size: 25px;
+    font-size: clamp(10px, 1.5vw, 25px);
     opacity: 0;
     color: black;
 }
 .heroImgContainer {
     flex: 1;
-    width: 50%;
 }
 .heroImage {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     float: right;
     -webkit-mask-image: linear-gradient(to right, transparent, black 25%);
     mask-image: linear-gradient(to right, transparent, black 25%);
     -webkit-mask-composite: source-in;
-    object-fit: cover;
 }
 
 .skillsSection {
@@ -81,10 +82,10 @@
     height: 100vh;
 }
 .projectsSection h2 {
-    font-size: 200px;
+    font-size: clamp(1rem, 10vw, 100rem);
     margin: 0;
     padding: 0;
-    transform: translateY(-280px);
+    transform: translateY(-25vh);
     color: white;
 }
 

@@ -5,11 +5,15 @@ import './styles/App.css';
 
 function App() {
   return (
-    <div className="App">
-        <Routes>
-            <Route path="/" element={<Home />} />
-        </Routes>
-    </div>
+      <div className="App">
+          <style>
+              @import url('https://fonts.googleapis.com/css2?family=Monomakh&display=swap');
+              @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
+          </style>
+          <Routes>
+              <Route path="/" element={<Home/>}/>
+          </Routes>
+      </div>
   );
 }
 

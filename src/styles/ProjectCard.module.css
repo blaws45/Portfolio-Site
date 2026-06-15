@@ -1,10 +1,13 @@
 .card {
-    height: 40vh;
+    height: 25vw;
     width: 40%;
     margin-bottom: 5%;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    font-family: "Aleo", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .card img {
@@ -47,6 +50,7 @@
     position: absolute;
     top: 82%;
     left: 3%;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
 
 .arrow {
@@ -68,11 +72,11 @@
 .visitButton {
     z-index: 2;
     transition: ease-in 0.2s;
-    width: 20%;
-    height: 15%;
+    width: 25%;
+    height: 25%;
     position: absolute;
-    top: 43%;
-    left: 40%;
+    top: 40%;
+    left: 37%;
     opacity: 0;
     background-color: #171717;
     border: none;

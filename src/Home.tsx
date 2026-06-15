@@ -55,8 +55,8 @@ function Home() {
             // Use transforms instead of fontSize (prevents layout shift bugs)
             tl.to(".heroTitleContainer h2", {
                 scale: 0.5,
-                y: -55,
-                x: -165,
+                y: "-100%",
+                x: "-25%",
                 ease: "none"
             });
 
@@ -67,7 +67,7 @@ function Home() {
 
             tl.to(".heroTitleContainer p", {
                 opacity: 1,
-                y: -90,
+                y: "-40%",
                 ease: "none"
             }, "<50%");
 
@@ -96,15 +96,15 @@ function Home() {
 
             const skillsCards = gsap.utils.toArray<HTMLElement>(".skillsCard");
             const colours: string[] = [
-                "#dcb872",
-                "#bca374",
-                "#dfc492",
+                "#9f8a6a",
+                "#d9c3a1",
+                "#e1cfb4",
                 "#ead3a8"
             ]
             skillsCards.forEach((card, index) => {
                 if (index > 0) {
                     tl.to(card, {
-                        y: index * -725,
+                        y: `${index * -140}%`,
                         backgroundColor: colours[index]
                     })
                 }
@@ -130,7 +130,7 @@ function Home() {
 
            tl.to(".projectsSection h2", {
                y: 0,
-               fontSize: 100
+               fontSize: 50
            }, "<50%");
 
             tl.to(".projectsContainer > *", {
@@ -168,7 +168,7 @@ function Home() {
             </div>
 
             <div className="skillsSection">
-                <h2>I specialise in...</h2>
+                <h2>I Specialise In...</h2>
                 <div className="skillsContainer">
                     <SkillsCard className={"skillsCard"} skill={"Web Design"} description={
                         "Designing modern, user-focused interfaces using tools such as Figma and sketching techniques." +
@@ -185,7 +185,7 @@ function Home() {
             </div>
             <br />
             <div className="projectsSection">
-                <h2>Some of my work</h2>
+                <h2>Some of My Work</h2>
                 <div className="projectsContainer">
                     <ProjectCard projectName={"Sports Streaming Site"}
                                  description={"Frontend showcase styled as streaming service"}
