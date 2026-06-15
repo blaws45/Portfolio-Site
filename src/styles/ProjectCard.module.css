@@ -101,3 +101,10 @@
     opacity: 0;
     background-image: linear-gradient(to top, black, transparent 50%);
 }
+
+@media (orientation: portrait) {
+    .card {
+        width : 80%;
+        height: 33vh;
+    }
+}
