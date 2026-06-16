@@ -5,6 +5,7 @@
     padding: 0 5% 0 5%;
     background-color: #bca374;
     color: white;
+    position: relative;
 }
 
 .card h3 {
@@ -13,7 +14,18 @@
 }
 
 .card p {
-    margin-top: 10%;
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    position: absolute;
+    font-size: 2cqw;
     text-align: left;
+    bottom: 5%;
+    width: 90%;
+    padding: 5%;
+    left: 0;
+}
+
+@media (orientation: portrait) {
+    .card p {
+        font-size: 5cqw;
+        word-spacing: 5px;
+    }
 }

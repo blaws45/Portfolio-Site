@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 80vh;
     background-image: linear-gradient(to right, white, #fdf8e0 50%);
 }
 
@@ -12,7 +13,7 @@
 }
 
 .nameTitle {
-    font-size: clamp(1.5rem, 5vw, 5rem);
+    font-size: 5cqw;
     text-wrap: nowrap;
     padding-bottom: 1%;
     border-bottom: 2px solid black;
@@ -20,14 +21,14 @@
 }
 
 .hi {
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: 3cqw;
     opacity: 50%;
     margin: 0;
 }
 
 .heroTitleContainer h2 {
     text-align: left;
-    font-size: clamp(1rem, 3vw, 3rem);
+    font-size: 3cqw;
     text-wrap: nowrap;
     color: #195a1f;
 }
@@ -38,7 +39,7 @@
 
 .heroTitleContainer p {
     margin-top: 10%;
-    font-size: clamp(10px, 1.5vw, 25px);
+    font-size: 1.5cqw;
     opacity: 0;
     color: black;
 }
@@ -100,5 +101,41 @@
 
 .projectsContainer > * {
     opacity: 0;
-    transform: translateY(-200vh);
+    transform: translateY(-100vh);
+}
+
+@media (orientation: portrait) {
+
+    .heroContainer {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .heroTitleContainer {
+        flex: 2;
+    }
+
+    .heroTitleContainer h2 {
+        font-size: 6cqw;
+    }
+
+    .heroTitleContainer p {
+        margin-top: 25%;
+        font-size: 4cqw;
+    }
+
+    .nameTitle {
+        font-size: 10cqw;
+    }
+
+    .heroImgContainer {
+        max-height: 30vh;
+        flex: 1;
+    }
+
+    .heroImage{
+        -webkit-mask-image: linear-gradient(to top, transparent, black 25%);
+        mask-image: linear-gradient(to top, transparent, black 25%);
+        -webkit-mask-composite: source-in;
+    }
 }

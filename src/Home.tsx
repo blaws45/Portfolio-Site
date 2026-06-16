@@ -45,7 +45,7 @@ function Home() {
                 scrollTrigger: {
                     trigger: ".heroContainer",
                     start: "top top",
-                    end: "+=100",
+                    end: "bottom top",
                     scrub: true,
                     pin: true,
                     invalidateOnRefresh: true
@@ -54,9 +54,9 @@ function Home() {
 
             // Use transforms instead of fontSize (prevents layout shift bugs)
             tl.to(".heroTitleContainer h2", {
-                scale: 0.5,
+                scale: 0.6,
                 y: "-100%",
-                x: "-25%",
+                x: "-20%",
                 ease: "none"
             });
 
@@ -121,7 +121,7 @@ function Home() {
            const tl = gsap.timeline({
                scrollTrigger: {
                    trigger: ".projectsSection",
-                   start: "top center",
+                   start: "top 90%",
                    end: "top top",
                    scrub: true,
                    invalidateOnRefresh: true
