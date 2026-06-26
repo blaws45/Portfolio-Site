@@ -27,7 +27,7 @@
     }
 
     .title {
-        transform: translateY(-30px);
+        transform: translateY(-40px);
     }
 
     .description {
@@ -106,5 +106,13 @@
     .card {
         width : 80%;
         height: 33vh;
+    }
+
+    .title {
+        font-size: 3.5cqw;
+    }
+
+    .description {
+        font-size: 2.5cqw;
     }
 }
