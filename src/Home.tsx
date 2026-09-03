@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
     const root = useRef(null);
+    const portrait = window.matchMedia('(orientation: portrait)');
 
     // ----Wait for images to load before refresh-----
     useEffect(() => {
@@ -160,6 +161,7 @@ function Home() {
                         highest-quality. I look at systems with a strong attention to detail mixing functionality
                         with intuitive design to make them as clean, user-friendly and professional as possible.
                     </p>
+                    <br></br>
                 </div>
 
                 <div className="heroImgContainer">

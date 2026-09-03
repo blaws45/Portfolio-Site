@@ -9,7 +9,6 @@
 .heroTitleContainer {
     flex: 1;
     padding: 5%;
-    overflow: hidden;
 }
 
 .nameTitle {
@@ -112,6 +111,7 @@
     }
 
     .heroTitleContainer {
+
         flex: 2;
     }
 
@@ -120,8 +120,7 @@
     }
 
     .heroTitleContainer p {
-        margin-top: 25%;
-        font-size: 4cqw;
+        font-size: 3cqw;
     }
 
     .nameTitle {
