@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles/ProjectCard.module.css";
 import projectImage from "./images/preview.png";
 import cafeImg from "./images/cafePreview.png";
+import rocksCafe from "./images/rocksPreview.png";
 
 interface ProjectCardProps {
     projectName: string;
@@ -11,8 +12,9 @@ interface ProjectCardProps {
 }
 
 const imagesDict: Record<string, string> = {
-    cafe: cafeImg,
-    sports: projectImage
+    beanCafe: cafeImg,
+    sports: projectImage,
+    rocksCafe: rocksCafe
 };
 
 function ProjectCard(props: ProjectCardProps) {

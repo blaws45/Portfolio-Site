@@ -196,7 +196,11 @@ function Home() {
                     <ProjectCard projectName={"Where is ya bean"}
                                  description={"WordPress site made for a local cafe"}
                                  link={"https://blaws45.github.io/cafe-site/"}
-                                 img={"cafe"}/>
+                                 img={"beanCafe"}/>
+                    <ProjectCard projectName={"Rocks Cafe"}
+                                 description={"Custom website made with React for local cafe focussing on frontend design and fluid responsive design"}
+                                 link={"https://rocks-cafe.vercel.app/"}
+                                 img={"rocksCafe"}/>
                 </div>
             </div>
         </div>
